@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: iyesss
+      POSTGRES_PASSWORD: aldiyes17032002
+      POSTGRES_DB: products
+    ports:
+      - 5432:5432

@@ -34,9 +34,9 @@ export const AddProduct = () => {
 
 	async function onSubmit(values: z.infer<typeof formSchema>) {
 		startTransition(() => {
-			addProductToDatabase(values).then((data) => {
-				console.log('[USE TRANSITION-DATA] - ', data);
-			});
+			addProductToDatabase(values).then((data) =>
+				console.log('[ADD-PRODUCT DATA] - ', data)
+			);
 		});
 	}
 

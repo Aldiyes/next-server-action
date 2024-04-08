@@ -21,7 +21,7 @@ export const addProductToDatabase = async (
 	const { product, price } = validatedFields.data;
 
 	if (!product || !price) {
-		return;
+		throw Error;
 	}
 
 	const newProduct: Product = {
@@ -29,7 +29,7 @@ export const addProductToDatabase = async (
 		price: price,
 	};
 
-	await fetch('https://6613f8482fc47b4cf27b3b9a.mockapi.io/products', {
+	await fetch('http://localhost:3000/api/products', {
 		method: 'POST',
 		body: JSON.stringify(newProduct),
 		headers: {
